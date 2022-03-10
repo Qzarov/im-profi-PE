@@ -1,11 +1,13 @@
-﻿# CMakeList.txt: проект CMake для im-profi-SE; включите исходный код и определения,
-# укажите здесь логику для конкретного проекта.
-#
-cmake_minimum_required (VERSION 3.8)
+﻿cmake_minimum_required (VERSION 3.8)
 
 project ("im-profi-SE")
 
-# Добавьте источник в исполняемый файл этого проекта.
 add_executable (im-profi-SE "im-profi-SE.cpp" "im-profi-SE.h")
 
-# TODO: Добавьте тесты и целевые объекты, если это необходимо.
+find_package(Poco REQUIRED COMPONENTS Foundation Net Util )
+add_executable(serverMainServer im-profi-SE/Server/main.cpp)
+add_library(message-objSH
+OBJECT
+    im-profi-SE/Server/Handlers.h
+    im-profi-SE/Server/Handlers.cpp
+)

@@ -4,5 +4,8 @@
 #pragma once
 
 #include <iostream>
+//#include <Poco/Util/ServerApplication.h>
 
-// TODO: установите здесь ссылки на дополнительные заголовки, требующиеся для программы.
+//#include "Listener.h"
+
+//POCO_SERVER_MAIN(Listener)
