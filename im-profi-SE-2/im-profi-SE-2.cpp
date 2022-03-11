@@ -78,13 +78,13 @@ public:
         double high_border = normal.CalcHighBorder();
 
         if (low_border > traffic) {
-            return "Трафик ниже нормы";
+            return "Traffic is below normal";
         }
         else if (high_border >= traffic) {
-            return "Трафик в пределах нормы";
+            return "Traffic within normal limits";
         }
         else
-            return "Трафик выше нормы";
+            return "Traffic is above normal";
     }
 
 private:
@@ -136,7 +136,7 @@ int main()
     cout << "File is readed!" << endl;
     //read info from port
     //Handle
-    cout << "Commands: end, next";
+    cout << "Commands: end, next" << endl;
     cout << "Enter command: ";
 
     string command = "next";
@@ -154,7 +154,7 @@ int main()
 
             NetLoad normal1, normal2;
             for (auto& el : net_load_vec) {
-                if (el.GetPort == port) {
+                if (el.GetPort() == port) {
                     int new_hour = el.GetTime().hour;
                     if (new_hour == time.hour) { normal1 = el; }
                     if (new_hour == time.hour + 1) { normal2 = el; }
